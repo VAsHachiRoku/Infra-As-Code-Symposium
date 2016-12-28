@@ -6,7 +6,12 @@
 
             #CertificateFile and Thumbprint are used for securing credentials. See:
             #http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx
-                        #The location on the compiling machine of the public key export of the certfificate which will be used to encrypt credentials            CertificateFile = 'C:\Certificates\DSCCertificate-Public.cer'             #Thumbprint of the certificate being used for encrypting credentials            Thumbprint      = 'ef0b73be1be1344431e96ed51f475f680e5add22'
+            
+            #The location on the compiling machine of the public key export of the certfificate which will be used to encrypt credentials
+            CertificateFile = 'C:\Certificates\DDscEncryptionCert.cer' 
+
+            #Thumbprint of the certificate being used for encrypting credentials
+            Thumbprint      = '‎dfa91727c4322596ff78cc7869b50bf066f3f85f'
 
             #The product key to license Exchange 2013
             ProductKey = '12345-12345-12345-12345-12345'
@@ -28,8 +33,8 @@
         #region Individual Node Settings
         #region DAG01 Nodes
         @{
-            NodeName        = 'SRV-01-01'
-            Fqdn            = 'SRV-01-01.contoso.com'
+            NodeName        = 'IACDEMOEX01'
+            Fqdn            = 'IACDEMOEX01.iacdemo.local'
             Role            = 'FirstDAGMember'
             DAGId           = 'DAG01'
             CASId           = 'Site1CAS'
@@ -180,7 +185,8 @@
     DAG01 = @(
         @{
             DAGName                              = 'DAG01'           
-            AutoDagTotalNumberOfServers          = 12            AutoDagDatabaseCopiesPerVolume       = 4
+            AutoDagTotalNumberOfServers          = 12
+            AutoDagDatabaseCopiesPerVolume       = 4
             DatabaseAvailabilityGroupIPAddresses = '10.10.10.11','110.10.20.11'
             WitnessServer                        = 'SRV-fsw-01.contoso.com'
             DbNameReplacements                   = @{"nn" = "01"}
@@ -191,7 +197,8 @@
     DAG02 = @(
         @{
             DAGName                              = 'DAG02'           
-            AutoDagTotalNumberOfServers          = 12            AutoDagDatabaseCopiesPerVolume       = 4
+            AutoDagTotalNumberOfServers          = 12
+            AutoDagDatabaseCopiesPerVolume       = 4
             DatabaseAvailabilityGroupIPAddresses = '10.10.10.12','10.10.20.12'
             WitnessServer                        = 'SRV-fsw-01.contoso.com'
             DbNameReplacements                   = @{"nn" = "02"}
