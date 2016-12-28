@@ -12,7 +12,7 @@ Configuration ConfigureLCMForDeployment
 }
 
 ###Compiles the example
-ConfigureLCMForDeployment -ConfigurationData $PSScriptRoot\ExchangeSettings-Lab.psd1
+ConfigureLCMForDeployment -ConfigurationData $PSScriptRoot\ExchangeSettings-Prod.psd1
 
 ###Sets up LCM on target computers to decrypt credentials, and to allow reboot during resource execution
-#Set-DscLocalConfigurationManager -Path .\ConfigureLCMForDeployment -Verbose -ComputerName XXX
+Set-DscLocalConfigurationManager -Path .\ConfigureLCMForDeployment -Verbose -ComputerName IACDEMOEX01
