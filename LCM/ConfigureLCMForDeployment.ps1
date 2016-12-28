@@ -12,7 +12,7 @@ Configuration ConfigureLCMForDeployment
 }
 
 ###Compiles the example
-ConfigureLCMForDeployment -ConfigurationData $PSScriptRoot\ExchangeSettings-Prod.psd1
+ConfigureLCMForDeployment -ConfigurationData 'C:\Users\LabAdmin.IACDEMO.001\Documents\GitHub\Infra-As-Code-Symposium\Settings\ExchangeSettings-Prod.psd1'
 
 ###Sets up LCM on target computers to decrypt credentials, and to allow reboot during resource execution
 Set-DscLocalConfigurationManager -Path .\ConfigureLCMForDeployment -Verbose -ComputerName IACDEMOEX01

@@ -8,7 +8,7 @@
             #http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx
             
             #The location on the compiling machine of the public key export of the certfificate which will be used to encrypt credentials
-            CertificateFile = 'C:\Certificates\DDscEncryptionCert.cer' 
+            CertificateFile = 'C:\Users\LabAdmin.IACDEMO.001\Documents\GitHub\Infra-As-Code-Symposium\LCM\DDscEncryptionCert.cer' 
 
             #Thumbprint of the certificate being used for encrypting credentials
             Thumbprint      = '‎dfa91727c4322596ff78cc7869b50bf066f3f85f'
